@@ -1,8 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
+import {Test2, TestInterface} from 'types'
 import './App.css';
 
 function App() {
+
+  const obj: TestInterface = {
+    x: '123',
+  }
+
+  const obj2 : Test2 = {
+    z: 24,
+  }
+
   return (
     <div className="App">
       <header className="App-header">
