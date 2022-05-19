@@ -1,21 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css'
+import {Header} from "./components/layout/Header";
+import {Map} from "./components/map/Map";
+import {SearchContext} from "./contex/searchContext";
 
 export const App = () => {
 
+    const [search, setSearch] = useState('')
+
     return (
-        <>
-            <header>
-                <h1><strong>Mega</strong><span> Ogłoszenia</span></h1>
-                <button>Dodaj ogłoszenie</button>
-                <div className="search">
-                    <input type="text"/>
-                    <button>Szukaj</button>
-                </div>
-            </header>
-            <div className="map">
-            </div>
-        </>
+        <SearchContext.Provider value={{search,setSearch}}>
+            <Header/>
+            <Map/>
+        </SearchContext.Provider>
     );
 }
 

@@ -1,0 +1,9 @@
+
+.map{
+    background-color: green;
+    height: calc(100vh - 49px);
+}
+
+.leaflet-container {
+    height: calc(100vh - 48px);
+}
