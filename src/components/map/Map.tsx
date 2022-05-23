@@ -6,6 +6,7 @@ import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
 import {SearchContext} from "../../contex/searchContext";
 import {SimpleAdEntity} from 'types'
 import {SingleAd} from "./SingleAd";
+import {apiUrl} from "../../config/api";
 
 export const Map = () => {
 
@@ -15,7 +16,7 @@ export const Map = () => {
     useEffect(()=>{
         // Jeżeli chcemy użyć funkcji asynchornicznych w React Typescript, musimy uzyć takiego zapisu:
         (async ()=>{
-          const res = await fetch(`http://localhost:3001/ad/search/${search}`);
+          const res = await fetch(`${apiUrl}/ad/search/${search}`);
           const data = await res.json();
           setAds(data);
         })();
